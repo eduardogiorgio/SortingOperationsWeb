@@ -1,0 +1,48 @@
+﻿@model SortingOperationsWeb.ViewModels.OrderStringsViewModel
+
+<div class="text-center">
+    <h1 class="display-4">Welcome - SortingOperationsWeb</h1>
+</div>
+<div class="text-center">
+    <form asp-action="Index">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <label asp-for="Input"></label>
+                        </div>
+                        <div class="card-body">
+                            <textarea asp-for="Input" class="form-control" rows="10" placeholder="abaccadcc&#10;xyzxy"></textarea>
+                        </div>
+                        <div class="card-footer">
+                            <span asp-validation-for="Input" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary mb-2">Order</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <label asp-for="Output"></label>
+                        </div>
+                        <div class="card-body">
+                            <textarea asp-for="Output" class="form-control" rows="10" placeholder="ccccaaabd&#10;xxyyz" disabled></textarea>
+                        </div>
+                        <div class="card-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
